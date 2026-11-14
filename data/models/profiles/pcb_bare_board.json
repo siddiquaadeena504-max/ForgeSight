@@ -1,0 +1,22 @@
+{
+  "key": "pcb_bare_board",
+  "material": "electronics",
+  "name": "Bare PCB - golden template comparison",
+  "product_category": "Printed circuit board (bare, binarized AOI image)",
+  "requires_reference": true,
+  "mm_per_pixel": 0.02083,
+  "detectors": [
+    {
+      "type": "refdiff",
+      "model": "pcb_refdiff",
+      "version": "1.0.0"
+    }
+  ],
+  "decision": {
+    "mode": "regions",
+    "region_confident": 0.9,
+    "image_level_validated": false,
+    "validated": true,
+    "evidence": "pcb_refdiff-test"
+  }
+}

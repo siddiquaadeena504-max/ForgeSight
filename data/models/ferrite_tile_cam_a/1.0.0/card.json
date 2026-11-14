@@ -1,0 +1,240 @@
+{
+  "name": "ferrite_tile_cam_a",
+  "version": "1.0.0",
+  "kind": "anomaly",
+  "material": "ceramics",
+  "architecture": "PatchCore: frozen ImageNet MobileNetV2 features, k-center coreset, 1-NN distance",
+  "dataset": "Ferrite tile - line camera A (managed dataset #1)",
+  "trained_on": "train split, defect-free images only",
+  "splits": {
+    "train": {
+      "good": 71,
+      "defective": 55
+    },
+    "val": {
+      "good": 23,
+      "defective": 23
+    },
+    "test": {
+      "good": 26,
+      "defective": 22
+    }
+  },
+  "calibration": {
+    "type": "platt",
+    "a": 0.9404906736886238,
+    "b": -14.904837473460443
+  },
+  "pixel_threshold": 20.076045989990234,
+  "metrics": {
+    "val": {
+      "auroc": 0.8715,
+      "n": 46,
+      "tp": 19,
+      "fp": 4,
+      "fn": 4,
+      "tn": 19,
+      "accuracy": 0.8261,
+      "accuracy_ci95": [
+        0.6928,
+        0.9091
+      ],
+      "precision": 0.8261,
+      "recall": 0.8261,
+      "recall_ci95": [
+        0.6286,
+        0.9302
+      ],
+      "f1": 0.8261,
+      "false_positive_rate": 0.1739,
+      "fpr_ci95": [
+        0.0698,
+        0.3714
+      ],
+      "false_negative_rate": 0.1739,
+      "fnr_ci95": [
+        0.0698,
+        0.3714
+      ],
+      "triage": {
+        "n": 46,
+        "t_low": 0.1093,
+        "t_high": 0.8004,
+        "auto_pass": 6,
+        "auto_defective": 11,
+        "sent_to_review": 29,
+        "review_rate": 0.6304,
+        "auto_decision_accuracy": 1.0,
+        "auto_decision_accuracy_ci95": [
+          0.8157,
+          1.0
+        ],
+        "escaped_defects": 0,
+        "escape_rate_of_defects": 0.0,
+        "escape_rate_ci95": [
+          0.0,
+          0.1431
+        ],
+        "false_rejects": 0,
+        "false_reject_rate_of_good": 0.0,
+        "false_reject_ci95": [
+          0.0,
+          0.1431
+        ]
+      }
+    },
+    "test": {
+      "auroc": 0.8794,
+      "n": 48,
+      "tp": 18,
+      "fp": 6,
+      "fn": 4,
+      "tn": 20,
+      "accuracy": 0.7917,
+      "accuracy_ci95": [
+        0.6574,
+        0.8827
+      ],
+      "precision": 0.75,
+      "recall": 0.8182,
+      "recall_ci95": [
+        0.6148,
+        0.9269
+      ],
+      "f1": 0.7826,
+      "false_positive_rate": 0.2308,
+      "fpr_ci95": [
+        0.1103,
+        0.4205
+      ],
+      "false_negative_rate": 0.1818,
+      "fnr_ci95": [
+        0.0731,
+        0.3852
+      ],
+      "calibration": {
+        "ece": 0.1015,
+        "bins": [
+          {
+            "bin": "0.0-0.1",
+            "n": 7,
+            "mean_predicted": 0.082,
+            "observed_rate": 0.0
+          },
+          {
+            "bin": "0.1-0.2",
+            "n": 9,
+            "mean_predicted": 0.1346,
+            "observed_rate": 0.2222
+          },
+          {
+            "bin": "0.2-0.3",
+            "n": 3,
+            "mean_predicted": 0.2275,
+            "observed_rate": 0.3333
+          },
+          {
+            "bin": "0.3-0.4",
+            "n": 3,
+            "mean_predicted": 0.3309,
+            "observed_rate": 0.0
+          },
+          {
+            "bin": "0.4-0.5",
+            "n": 2,
+            "mean_predicted": 0.4356,
+            "observed_rate": 0.5
+          },
+          {
+            "bin": "0.5-0.6",
+            "n": 3,
+            "mean_predicted": 0.5792,
+            "observed_rate": 0.3333
+          },
+          {
+            "bin": "0.6-0.7",
+            "n": 6,
+            "mean_predicted": 0.6472,
+            "observed_rate": 0.6667
+          },
+          {
+            "bin": "0.7-0.8",
+            "n": 6,
+            "mean_predicted": 0.7768,
+            "observed_rate": 0.6667
+          },
+          {
+            "bin": "0.8-0.9",
+            "n": 2,
+            "mean_predicted": 0.8329,
+            "observed_rate": 1.0
+          },
+          {
+            "bin": "0.9-1.0",
+            "n": 7,
+            "mean_predicted": 0.9682,
+            "observed_rate": 1.0
+          }
+        ]
+      },
+      "triage": {
+        "n": 48,
+        "t_low": 0.1093,
+        "t_high": 0.8004,
+        "auto_pass": 7,
+        "auto_defective": 9,
+        "sent_to_review": 32,
+        "review_rate": 0.6667,
+        "auto_decision_accuracy": 1.0,
+        "auto_decision_accuracy_ci95": [
+          0.8064,
+          1.0
+        ],
+        "escaped_defects": 0,
+        "escape_rate_of_defects": 0.0,
+        "escape_rate_ci95": [
+          0.0,
+          0.1487
+        ],
+        "false_rejects": 0,
+        "false_reject_rate_of_good": 0.0,
+        "false_reject_ci95": [
+          0.0,
+          0.1287
+        ]
+      }
+    }
+  },
+  "limitations": [
+    "Valid only for the product, camera and lighting represented in the training images."
+  ],
+  "proposed_decision": {
+    "mode": "fusion",
+    "features": [
+      "ferrite_tile_cam_a"
+    ],
+    "coef": [
+      0.9404906736886238
+    ],
+    "intercept": -14.904837473460443,
+    "t_low": 0.10934908665258206,
+    "t_high": 0.8004084812716372,
+    "validated": true,
+    "image_level_validated": true,
+    "evidence": "ferrite_tile_cam_a-1.0.0-test"
+  },
+  "drift_reference": [
+    11.9926,
+    13.1305,
+    13.4741,
+    13.9081,
+    14.203,
+    14.3051,
+    14.5789,
+    15.0301,
+    15.4728,
+    16.5634,
+    17.3247
+  ],
+  "created_at": "2026-11-14T04:32:02.408525+00:00"
+}

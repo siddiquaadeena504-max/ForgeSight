@@ -1,0 +1,41 @@
+# Render Blueprint: database + inspection engine (private) + web UI (public).
+# In Render: New > Blueprint > pick this repository. You will be asked for FS_ADMIN_PASSWORD.
+# NOT YET TESTED ON RENDER: the Docker images were never built in the environment this was written in.
+databases:
+  - name: forgesight-db
+    databaseName: forgesight
+    user: forgesight
+    plan: basic-256mb
+
+services:
+  - type: pserv                      # private: only the web UI can reach it
+    name: forgesight-engine
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: .
+    plan: standard                   # PyTorch + models need about 2 GB RAM
+    disk:                            # uploaded images survive redeploys
+      name: forgesight-storage
+      mountPath: /app/data/storage
+      sizeGB: 5
+    envVars:
+      - key: FS_ENV
+        value: production
+      - key: FS_DATABASE_URL
+        fromDatabase: { name: forgesight-db, property: connectionString }
+      - key: FS_SECRET_KEY
+        generateValue: true
+      - key: FS_ADMIN_EMAIL
+        value: admin@forgesight.local
+      - key: FS_ADMIN_PASSWORD
+        sync: false                  # you type this in when creating the Blueprint (10+ characters)
+
+  - type: web
+    name: forgesight-web
+    runtime: docker
+    dockerfilePath: ./frontend/Dockerfile
+    dockerContext: .
+    plan: starter
+    envVars:
+      - key: BACKEND_HOSTPORT        # read at build time by next.config.mjs
+        fromService: { name: forgesight-engine, type: pserv, property: hostport }

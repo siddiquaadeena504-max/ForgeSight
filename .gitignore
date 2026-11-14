@@ -1,0 +1,13 @@
+node_modules/
+.next/
+__pycache__/
+*.pyc
+.env
+data/storage/
+data/external/
+data/yolo_work/
+.pytest_cache/
+data/*.log
+*.db
+frontend/tsconfig.tsbuildinfo
+frontend/next-env.d.ts

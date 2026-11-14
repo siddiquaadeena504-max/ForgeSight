@@ -1,0 +1,75 @@
+{
+  "key": "magnetic_tile",
+  "material": "ceramics",
+  "name": "Ferrite magnetic tile surface",
+  "product_category": "Sintered ferrite magnetic tile",
+  "requires_reference": false,
+  "mm_per_pixel": null,
+  "detectors": [
+    {
+      "type": "patchcore",
+      "model": "mt_patchcore",
+      "version": "1.0.0",
+      "calibration": {
+        "type": "platt",
+        "a": 1.383745160308503,
+        "b": -22.316959551730744
+      }
+    },
+    {
+      "type": "segnet",
+      "model": "mt_segnet",
+      "version": "1.0.0",
+      "calibration": {
+        "type": "platt",
+        "a": 7.180455036555787,
+        "b": -3.1420984970483934
+      }
+    }
+  ],
+  "decision": {
+    "mode": "fusion",
+    "features": [
+      "mt_patchcore",
+      "mt_segnet"
+    ],
+    "coef": [
+      0.19973640529270423,
+      6.454940526278575
+    ],
+    "intercept": -6.115400689742687,
+    "t_low": 0.03941129294539872,
+    "t_high": 0.967509390703196,
+    "image_level_validated": true,
+    "validated": true,
+    "evidence": "mt_ensemble-mt-test"
+  },
+  "drift_reference": {
+    "mt_patchcore": [
+      13.2762,
+      13.9743,
+      14.2493,
+      14.4449,
+      14.6099,
+      14.7949,
+      14.9325,
+      15.1002,
+      15.6913,
+      16.21,
+      19.2636
+    ],
+    "brightness": [
+      51.34,
+      64.17,
+      75.25,
+      86.07,
+      96.48,
+      108.49,
+      119.64,
+      129.0,
+      139.51,
+      159.23,
+      221.86
+    ]
+  }
+}

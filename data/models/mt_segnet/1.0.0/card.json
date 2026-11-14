@@ -1,0 +1,379 @@
+{
+  "name": "mt_segnet",
+  "version": "1.0.0",
+  "kind": "segmentation",
+  "material": "ceramics",
+  "classes": [
+    "blowhole",
+    "break",
+    "crack",
+    "fray",
+    "uneven"
+  ],
+  "architecture": "MobileNetV2 encoder (ImageNet transfer) + FPN decoder, 320x320, CE + Dice",
+  "dataset": "Magnetic Tile Surface Defects",
+  "splits": {
+    "test": {
+      "good": 202,
+      "blowhole": 23,
+      "break": 18,
+      "crack": 12,
+      "fray": 5,
+      "uneven": 17
+    },
+    "val": {
+      "good": 192,
+      "blowhole": 22,
+      "break": 22,
+      "crack": 11,
+      "fray": 7,
+      "uneven": 21
+    },
+    "train": {
+      "good": 558,
+      "blowhole": 70,
+      "break": 45,
+      "crack": 34,
+      "fray": 20,
+      "uneven": 65
+    }
+  },
+  "training": {
+    "epochs": 36,
+    "loss_history": [
+      2.9016,
+      2.4191,
+      1.623,
+      1.2189,
+      1.0668,
+      0.9976,
+      0.9445,
+      0.901,
+      0.8741,
+      0.832,
+      0.8062,
+      0.7978,
+      0.7446,
+      0.7145,
+      0.7126,
+      0.6863,
+      0.669,
+      0.6474,
+      0.6231,
+      0.5986,
+      0.5119,
+      0.3709,
+      0.2668,
+      0.2556,
+      0.2206,
+      0.1969,
+      0.1696,
+      0.1739,
+      0.1695,
+      0.162,
+      0.1546,
+      0.1626,
+      0.1433,
+      0.1387,
+      0.1409,
+      0.1452
+    ],
+    "train_images": 792,
+    "train_seconds": 2277.0,
+    "optimizer": "AdamW+OneCycle",
+    "lr": 0.001,
+    "batch": 12,
+    "augmentation": "flips, brightness/contrast jitter",
+    "class_weights": {
+      "blowhole": 6.22,
+      "break": 1.0,
+      "crack": 4.47,
+      "fray": 0.51,
+      "uneven": 0.5
+    }
+  },
+  "calibration": {
+    "type": "platt",
+    "a": 7.180455036555787,
+    "b": -3.1420984970483934
+  },
+  "pixel_threshold": 0.4,
+  "metrics": {
+    "val": {
+      "auroc": 0.9834,
+      "n": 275,
+      "tp": 79,
+      "fp": 5,
+      "fn": 4,
+      "tn": 187,
+      "accuracy": 0.9673,
+      "accuracy_ci95": [
+        0.939,
+        0.9827
+      ],
+      "precision": 0.9405,
+      "recall": 0.9518,
+      "recall_ci95": [
+        0.8825,
+        0.9811
+      ],
+      "f1": 0.9461,
+      "false_positive_rate": 0.026,
+      "fpr_ci95": [
+        0.0112,
+        0.0595
+      ],
+      "false_negative_rate": 0.0482,
+      "fnr_ci95": [
+        0.0189,
+        0.1175
+      ],
+      "calibration": {
+        "ece": 0.04,
+        "bins": [
+          {
+            "bin": "0.0-0.1",
+            "n": 188,
+            "mean_predicted": 0.0414,
+            "observed_rate": 0.0106
+          },
+          {
+            "bin": "0.1-0.2",
+            "n": 2,
+            "mean_predicted": 0.1317,
+            "observed_rate": 0.5
+          },
+          {
+            "bin": "0.2-0.3",
+            "n": 1,
+            "mean_predicted": 0.2332,
+            "observed_rate": 1.0
+          },
+          {
+            "bin": "0.7-0.8",
+            "n": 1,
+            "mean_predicted": 0.769,
+            "observed_rate": 1.0
+          },
+          {
+            "bin": "0.8-0.9",
+            "n": 1,
+            "mean_predicted": 0.8573,
+            "observed_rate": 1.0
+          },
+          {
+            "bin": "0.9-1.0",
+            "n": 82,
+            "mean_predicted": 0.9796,
+            "observed_rate": 0.939
+          }
+        ]
+      }
+    },
+    "test": {
+      "auroc": 0.9984,
+      "n": 277,
+      "tp": 75,
+      "fp": 2,
+      "fn": 0,
+      "tn": 200,
+      "accuracy": 0.9928,
+      "accuracy_ci95": [
+        0.9741,
+        0.998
+      ],
+      "precision": 0.974,
+      "recall": 1.0,
+      "recall_ci95": [
+        0.9513,
+        1.0
+      ],
+      "f1": 0.9868,
+      "false_positive_rate": 0.0099,
+      "fpr_ci95": [
+        0.0027,
+        0.0354
+      ],
+      "false_negative_rate": 0.0,
+      "fnr_ci95": [
+        0.0,
+        0.0487
+      ],
+      "calibration": {
+        "ece": 0.0366,
+        "bins": [
+          {
+            "bin": "0.0-0.1",
+            "n": 200,
+            "mean_predicted": 0.0414,
+            "observed_rate": 0.0
+          },
+          {
+            "bin": "0.5-0.6",
+            "n": 1,
+            "mean_predicted": 0.5365,
+            "observed_rate": 1.0
+          },
+          {
+            "bin": "0.7-0.8",
+            "n": 2,
+            "mean_predicted": 0.7743,
+            "observed_rate": 1.0
+          },
+          {
+            "bin": "0.8-0.9",
+            "n": 2,
+            "mean_predicted": 0.8583,
+            "observed_rate": 1.0
+          },
+          {
+            "bin": "0.9-1.0",
+            "n": 72,
+            "mean_predicted": 0.9814,
+            "observed_rate": 0.9722
+          }
+        ]
+      }
+    },
+    "test_pixel": {
+      "pixel_precision": 0.8503,
+      "pixel_recall": 0.8813,
+      "pixel_f1": 0.8655,
+      "iou": 0.7629
+    },
+    "test_defect_type": {
+      "n": 75,
+      "accuracy": 0.7067,
+      "accuracy_ci95": [
+        0.5956,
+        0.7976
+      ],
+      "macro_f1": 0.6838,
+      "per_class": {
+        "blowhole": {
+          "support": 23,
+          "precision": 0.6296,
+          "recall": 0.7391,
+          "recall_ci95": [
+            0.5353,
+            0.8745
+          ],
+          "f1": 0.68
+        },
+        "break": {
+          "support": 18,
+          "precision": 0.8182,
+          "recall": 0.5,
+          "recall_ci95": [
+            0.2903,
+            0.7097
+          ],
+          "f1": 0.6207
+        },
+        "crack": {
+          "support": 12,
+          "precision": 0.4667,
+          "recall": 0.5833,
+          "recall_ci95": [
+            0.3195,
+            0.8067
+          ],
+          "f1": 0.5185
+        },
+        "fray": {
+          "support": 5,
+          "precision": 0.6,
+          "recall": 0.6,
+          "recall_ci95": [
+            0.2307,
+            0.8824
+          ],
+          "f1": 0.6
+        },
+        "uneven": {
+          "support": 17,
+          "precision": 1.0,
+          "recall": 1.0,
+          "recall_ci95": [
+            0.8157,
+            1.0
+          ],
+          "f1": 1.0
+        },
+        "none": {
+          "support": 0,
+          "precision": null,
+          "recall": null,
+          "recall_ci95": null,
+          "f1": null
+        }
+      },
+      "confusion": {
+        "labels": [
+          "blowhole",
+          "break",
+          "crack",
+          "fray",
+          "uneven",
+          "none"
+        ],
+        "matrix": [
+          [
+            17,
+            0,
+            6,
+            0,
+            0,
+            0
+          ],
+          [
+            5,
+            9,
+            2,
+            2,
+            0,
+            0
+          ],
+          [
+            5,
+            0,
+            7,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            17,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    }
+  },
+  "limitations": [
+    "Validated only on the Magnetic Tile dataset (grayscale ferrite tile surfaces, one imaging setup).",
+    "Test split has 75 defective and 202 good images: far too few to verify a 99.9% target (see the confidence intervals).",
+    "Images are resized to a fixed square input; very small defects (blowholes) lose resolution."
+  ],
+  "created_at": "2026-11-13T15:08:39+00:00"
+}

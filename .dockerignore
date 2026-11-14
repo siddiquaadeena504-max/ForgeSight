@@ -1,0 +1,7 @@
+node_modules
+.next
+data/external
+data/storage
+data/yolo_work
+**/__pycache__
+.git

@@ -1,0 +1,989 @@
+[
+  {
+    "id": "mt_patchcore-mt-test",
+    "model": "mt_patchcore",
+    "version": "1.0.0",
+    "material": "ceramics",
+    "dataset": "Magnetic Tile Surface Defects",
+    "split": "test",
+    "task": "anomaly detection (image-level) + localization",
+    "n": 277,
+    "metrics": {
+      "val": {
+        "auroc": 0.9298,
+        "n": 275,
+        "tp": 67,
+        "fp": 24,
+        "fn": 16,
+        "tn": 168,
+        "accuracy": 0.8545,
+        "accuracy_ci95": [
+          0.808,
+          0.8913
+        ],
+        "precision": 0.7363,
+        "recall": 0.8072,
+        "recall_ci95": [
+          0.7096,
+          0.8777
+        ],
+        "f1": 0.7701,
+        "false_positive_rate": 0.125,
+        "fpr_ci95": [
+          0.0855,
+          0.1793
+        ],
+        "false_negative_rate": 0.1928,
+        "fnr_ci95": [
+          0.1223,
+          0.2904
+        ],
+        "calibration": {
+          "ece": 0.0887,
+          "bins": [
+            {
+              "bin": "0.0-0.1",
+              "n": 75,
+              "mean_predicted": 0.0641,
+              "observed_rate": 0.0133
+            },
+            {
+              "bin": "0.1-0.2",
+              "n": 65,
+              "mean_predicted": 0.1486,
+              "observed_rate": 0.0308
+            },
+            {
+              "bin": "0.2-0.3",
+              "n": 15,
+              "mean_predicted": 0.2414,
+              "observed_rate": 0.1333
+            },
+            {
+              "bin": "0.3-0.4",
+              "n": 13,
+              "mean_predicted": 0.3514,
+              "observed_rate": 0.3846
+            },
+            {
+              "bin": "0.4-0.5",
+              "n": 16,
+              "mean_predicted": 0.4493,
+              "observed_rate": 0.375
+            },
+            {
+              "bin": "0.5-0.6",
+              "n": 18,
+              "mean_predicted": 0.5374,
+              "observed_rate": 0.3889
+            },
+            {
+              "bin": "0.6-0.7",
+              "n": 5,
+              "mean_predicted": 0.649,
+              "observed_rate": 0.6
+            },
+            {
+              "bin": "0.7-0.8",
+              "n": 6,
+              "mean_predicted": 0.7411,
+              "observed_rate": 0.5
+            },
+            {
+              "bin": "0.8-0.9",
+              "n": 12,
+              "mean_predicted": 0.8558,
+              "observed_rate": 0.6667
+            },
+            {
+              "bin": "0.9-1.0",
+              "n": 50,
+              "mean_predicted": 0.9807,
+              "observed_rate": 0.92
+            }
+          ]
+        }
+      },
+      "test": {
+        "auroc": 0.9659,
+        "n": 277,
+        "tp": 66,
+        "fp": 22,
+        "fn": 9,
+        "tn": 180,
+        "accuracy": 0.8881,
+        "accuracy_ci95": [
+          0.8455,
+          0.92
+        ],
+        "precision": 0.75,
+        "recall": 0.88,
+        "recall_ci95": [
+          0.7874,
+          0.9356
+        ],
+        "f1": 0.8098,
+        "false_positive_rate": 0.1089,
+        "fpr_ci95": [
+          0.073,
+          0.1594
+        ],
+        "false_negative_rate": 0.12,
+        "fnr_ci95": [
+          0.0644,
+          0.2126
+        ],
+        "calibration": {
+          "ece": 0.1212,
+          "bins": [
+            {
+              "bin": "0.0-0.1",
+              "n": 83,
+              "mean_predicted": 0.0629,
+              "observed_rate": 0.0
+            },
+            {
+              "bin": "0.1-0.2",
+              "n": 47,
+              "mean_predicted": 0.1426,
+              "observed_rate": 0.0
+            },
+            {
+              "bin": "0.2-0.3",
+              "n": 25,
+              "mean_predicted": 0.2348,
+              "observed_rate": 0.12
+            },
+            {
+              "bin": "0.3-0.4",
+              "n": 17,
+              "mean_predicted": 0.3395,
+              "observed_rate": 0.1176
+            },
+            {
+              "bin": "0.4-0.5",
+              "n": 17,
+              "mean_predicted": 0.4565,
+              "observed_rate": 0.2353
+            },
+            {
+              "bin": "0.5-0.6",
+              "n": 10,
+              "mean_predicted": 0.5493,
+              "observed_rate": 0.3
+            },
+            {
+              "bin": "0.6-0.7",
+              "n": 5,
+              "mean_predicted": 0.6345,
+              "observed_rate": 0.4
+            },
+            {
+              "bin": "0.7-0.8",
+              "n": 9,
+              "mean_predicted": 0.7456,
+              "observed_rate": 0.2222
+            },
+            {
+              "bin": "0.8-0.9",
+              "n": 11,
+              "mean_predicted": 0.8715,
+              "observed_rate": 0.8182
+            },
+            {
+              "bin": "0.9-1.0",
+              "n": 53,
+              "mean_predicted": 0.9865,
+              "observed_rate": 0.9434
+            }
+          ]
+        }
+      },
+      "test_pixel": {
+        "pixel_precision": 0.3145,
+        "pixel_recall": 0.3612,
+        "pixel_f1": 0.3362,
+        "iou": 0.2021
+      },
+      "cross_validation": {
+        "folds": 5,
+        "auroc_per_fold": [
+          0.9664,
+          0.9615,
+          0.9761,
+          0.9135,
+          0.9095
+        ],
+        "auroc_mean": 0.9454,
+        "auroc_std": 0.0281
+      }
+    },
+    "notes": [
+      "Validated only on the Magnetic Tile dataset (grayscale ferrite tile surfaces, one imaging setup).",
+      "Test split has 75 defective and 202 good images: far too few to verify a 99.9% target (see the confidence intervals).",
+      "Images are resized to a fixed square input; very small defects (blowholes) lose resolution."
+    ],
+    "created_at": "2026-11-13T15:08:39+00:00",
+    "hardware": "CPU x4 threads (no GPU)"
+  },
+  {
+    "id": "mt_segnet-mt-test",
+    "model": "mt_segnet",
+    "version": "1.0.0",
+    "material": "ceramics",
+    "dataset": "Magnetic Tile Surface Defects",
+    "split": "test",
+    "task": "segmentation + defect classification",
+    "n": 277,
+    "metrics": {
+      "val": {
+        "auroc": 0.9834,
+        "n": 275,
+        "tp": 79,
+        "fp": 5,
+        "fn": 4,
+        "tn": 187,
+        "accuracy": 0.9673,
+        "accuracy_ci95": [
+          0.939,
+          0.9827
+        ],
+        "precision": 0.9405,
+        "recall": 0.9518,
+        "recall_ci95": [
+          0.8825,
+          0.9811
+        ],
+        "f1": 0.9461,
+        "false_positive_rate": 0.026,
+        "fpr_ci95": [
+          0.0112,
+          0.0595
+        ],
+        "false_negative_rate": 0.0482,
+        "fnr_ci95": [
+          0.0189,
+          0.1175
+        ],
+        "calibration": {
+          "ece": 0.04,
+          "bins": [
+            {
+              "bin": "0.0-0.1",
+              "n": 188,
+              "mean_predicted": 0.0414,
+              "observed_rate": 0.0106
+            },
+            {
+              "bin": "0.1-0.2",
+              "n": 2,
+              "mean_predicted": 0.1317,
+              "observed_rate": 0.5
+            },
+            {
+              "bin": "0.2-0.3",
+              "n": 1,
+              "mean_predicted": 0.2332,
+              "observed_rate": 1.0
+            },
+            {
+              "bin": "0.7-0.8",
+              "n": 1,
+              "mean_predicted": 0.769,
+              "observed_rate": 1.0
+            },
+            {
+              "bin": "0.8-0.9",
+              "n": 1,
+              "mean_predicted": 0.8573,
+              "observed_rate": 1.0
+            },
+            {
+              "bin": "0.9-1.0",
+              "n": 82,
+              "mean_predicted": 0.9796,
+              "observed_rate": 0.939
+            }
+          ]
+        }
+      },
+      "test": {
+        "auroc": 0.9984,
+        "n": 277,
+        "tp": 75,
+        "fp": 2,
+        "fn": 0,
+        "tn": 200,
+        "accuracy": 0.9928,
+        "accuracy_ci95": [
+          0.9741,
+          0.998
+        ],
+        "precision": 0.974,
+        "recall": 1.0,
+        "recall_ci95": [
+          0.9513,
+          1.0
+        ],
+        "f1": 0.9868,
+        "false_positive_rate": 0.0099,
+        "fpr_ci95": [
+          0.0027,
+          0.0354
+        ],
+        "false_negative_rate": 0.0,
+        "fnr_ci95": [
+          0.0,
+          0.0487
+        ],
+        "calibration": {
+          "ece": 0.0366,
+          "bins": [
+            {
+              "bin": "0.0-0.1",
+              "n": 200,
+              "mean_predicted": 0.0414,
+              "observed_rate": 0.0
+            },
+            {
+              "bin": "0.5-0.6",
+              "n": 1,
+              "mean_predicted": 0.5365,
+              "observed_rate": 1.0
+            },
+            {
+              "bin": "0.7-0.8",
+              "n": 2,
+              "mean_predicted": 0.7743,
+              "observed_rate": 1.0
+            },
+            {
+              "bin": "0.8-0.9",
+              "n": 2,
+              "mean_predicted": 0.8583,
+              "observed_rate": 1.0
+            },
+            {
+              "bin": "0.9-1.0",
+              "n": 72,
+              "mean_predicted": 0.9814,
+              "observed_rate": 0.9722
+            }
+          ]
+        }
+      },
+      "test_pixel": {
+        "pixel_precision": 0.8503,
+        "pixel_recall": 0.8813,
+        "pixel_f1": 0.8655,
+        "iou": 0.7629
+      },
+      "test_defect_type": {
+        "n": 75,
+        "accuracy": 0.7067,
+        "accuracy_ci95": [
+          0.5956,
+          0.7976
+        ],
+        "macro_f1": 0.6838,
+        "per_class": {
+          "blowhole": {
+            "support": 23,
+            "precision": 0.6296,
+            "recall": 0.7391,
+            "recall_ci95": [
+              0.5353,
+              0.8745
+            ],
+            "f1": 0.68
+          },
+          "break": {
+            "support": 18,
+            "precision": 0.8182,
+            "recall": 0.5,
+            "recall_ci95": [
+              0.2903,
+              0.7097
+            ],
+            "f1": 0.6207
+          },
+          "crack": {
+            "support": 12,
+            "precision": 0.4667,
+            "recall": 0.5833,
+            "recall_ci95": [
+              0.3195,
+              0.8067
+            ],
+            "f1": 0.5185
+          },
+          "fray": {
+            "support": 5,
+            "precision": 0.6,
+            "recall": 0.6,
+            "recall_ci95": [
+              0.2307,
+              0.8824
+            ],
+            "f1": 0.6
+          },
+          "uneven": {
+            "support": 17,
+            "precision": 1.0,
+            "recall": 1.0,
+            "recall_ci95": [
+              0.8157,
+              1.0
+            ],
+            "f1": 1.0
+          },
+          "none": {
+            "support": 0,
+            "precision": null,
+            "recall": null,
+            "recall_ci95": null,
+            "f1": null
+          }
+        },
+        "confusion": {
+          "labels": [
+            "blowhole",
+            "break",
+            "crack",
+            "fray",
+            "uneven",
+            "none"
+          ],
+          "matrix": [
+            [
+              17,
+              0,
+              6,
+              0,
+              0,
+              0
+            ],
+            [
+              5,
+              9,
+              2,
+              2,
+              0,
+              0
+            ],
+            [
+              5,
+              0,
+              7,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              2,
+              0,
+              3,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              17,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    "notes": [
+      "Validated only on the Magnetic Tile dataset (grayscale ferrite tile surfaces, one imaging setup).",
+      "Test split has 75 defective and 202 good images: far too few to verify a 99.9% target (see the confidence intervals).",
+      "Images are resized to a fixed square input; very small defects (blowholes) lose resolution."
+    ],
+    "created_at": "2026-11-13T15:08:39+00:00",
+    "hardware": "CPU x4 threads (no GPU)"
+  },
+  {
+    "id": "classical_cv-mt-test",
+    "model": "classical_cv",
+    "version": "1.0",
+    "material": "ceramics",
+    "dataset": "Magnetic Tile Surface Defects",
+    "split": "test",
+    "task": "training-free screening baseline",
+    "n": 277,
+    "metrics": {
+      "test": {
+        "auroc": 0.4691,
+        "n": 277,
+        "tp": 75,
+        "fp": 202,
+        "fn": 0,
+        "tn": 0,
+        "accuracy": 0.2708,
+        "accuracy_ci95": [
+          0.2218,
+          0.326
+        ],
+        "precision": 0.2708,
+        "recall": 1.0,
+        "recall_ci95": [
+          0.9513,
+          1.0
+        ],
+        "f1": 0.4261,
+        "false_positive_rate": 1.0,
+        "fpr_ci95": [
+          0.9813,
+          1.0
+        ],
+        "false_negative_rate": 0.0,
+        "fnr_ci95": [
+          0.0,
+          0.0487
+        ]
+      }
+    },
+    "notes": [
+      "Validated only on the Magnetic Tile dataset (grayscale ferrite tile surfaces, one imaging setup).",
+      "Test split has 75 defective and 202 good images: far too few to verify a 99.9% target (see the confidence intervals).",
+      "Images are resized to a fixed square input; very small defects (blowholes) lose resolution."
+    ],
+    "created_at": "2026-11-13T15:08:39+00:00",
+    "hardware": "CPU x4 threads (no GPU)"
+  },
+  {
+    "id": "mt_ensemble-mt-test",
+    "model": "mt_ensemble",
+    "version": "1.0.0",
+    "material": "ceramics",
+    "dataset": "Magnetic Tile Surface Defects",
+    "split": "test",
+    "task": "ensemble decision (PatchCore + SegNet, stacked) with review band",
+    "n": 277,
+    "metrics": {
+      "val": {
+        "auroc": 0.972,
+        "n": 275,
+        "tp": 79,
+        "fp": 5,
+        "fn": 4,
+        "tn": 187,
+        "accuracy": 0.9673,
+        "accuracy_ci95": [
+          0.939,
+          0.9827
+        ],
+        "precision": 0.9405,
+        "recall": 0.9518,
+        "recall_ci95": [
+          0.8825,
+          0.9811
+        ],
+        "f1": 0.9461,
+        "false_positive_rate": 0.026,
+        "fpr_ci95": [
+          0.0112,
+          0.0595
+        ],
+        "false_negative_rate": 0.0482,
+        "fnr_ci95": [
+          0.0189,
+          0.1175
+        ],
+        "calibration": {
+          "ece": 0.0397,
+          "bins": [
+            {
+              "bin": "0.0-0.1",
+              "n": 188,
+              "mean_predicted": 0.0421,
+              "observed_rate": 0.0106
+            },
+            {
+              "bin": "0.1-0.2",
+              "n": 2,
+              "mean_predicted": 0.136,
+              "observed_rate": 0.5
+            },
+            {
+              "bin": "0.2-0.3",
+              "n": 1,
+              "mean_predicted": 0.239,
+              "observed_rate": 1.0
+            },
+            {
+              "bin": "0.8-0.9",
+              "n": 2,
+              "mean_predicted": 0.8439,
+              "observed_rate": 1.0
+            },
+            {
+              "bin": "0.9-1.0",
+              "n": 82,
+              "mean_predicted": 0.9779,
+              "observed_rate": 0.939
+            }
+          ]
+        }
+      },
+      "test": {
+        "auroc": 0.9983,
+        "n": 277,
+        "tp": 75,
+        "fp": 2,
+        "fn": 0,
+        "tn": 200,
+        "accuracy": 0.9928,
+        "accuracy_ci95": [
+          0.9741,
+          0.998
+        ],
+        "precision": 0.974,
+        "recall": 1.0,
+        "recall_ci95": [
+          0.9513,
+          1.0
+        ],
+        "f1": 0.9868,
+        "false_positive_rate": 0.0099,
+        "fpr_ci95": [
+          0.0027,
+          0.0354
+        ],
+        "false_negative_rate": 0.0,
+        "fnr_ci95": [
+          0.0,
+          0.0487
+        ],
+        "calibration": {
+          "ece": 0.0365,
+          "bins": [
+            {
+              "bin": "0.0-0.1",
+              "n": 200,
+              "mean_predicted": 0.0426,
+              "observed_rate": 0.0
+            },
+            {
+              "bin": "0.7-0.8",
+              "n": 1,
+              "mean_predicted": 0.7135,
+              "observed_rate": 1.0
+            },
+            {
+              "bin": "0.8-0.9",
+              "n": 4,
+              "mean_predicted": 0.8486,
+              "observed_rate": 1.0
+            },
+            {
+              "bin": "0.9-1.0",
+              "n": 72,
+              "mean_predicted": 0.9821,
+              "observed_rate": 0.9722
+            }
+          ]
+        }
+      },
+      "test_triage": {
+        "n": 277,
+        "t_low": 0.0394,
+        "t_high": 0.9675,
+        "auto_pass": 91,
+        "auto_defective": 68,
+        "sent_to_review": 118,
+        "review_rate": 0.426,
+        "auto_decision_accuracy": 0.9937,
+        "auto_decision_accuracy_ci95": [
+          0.9652,
+          0.9989
+        ],
+        "escaped_defects": 0,
+        "escape_rate_of_defects": 0.0,
+        "escape_rate_ci95": [
+          0.0,
+          0.0487
+        ],
+        "false_rejects": 1,
+        "false_reject_rate_of_good": 0.005,
+        "false_reject_ci95": [
+          0.0009,
+          0.0275
+        ]
+      },
+      "val_triage": {
+        "n": 275,
+        "t_low": 0.0394,
+        "t_high": 0.9675,
+        "auto_pass": 80,
+        "auto_defective": 71,
+        "sent_to_review": 124,
+        "review_rate": 0.4509,
+        "auto_decision_accuracy": 0.9735,
+        "auto_decision_accuracy_ci95": [
+          0.9339,
+          0.9897
+        ],
+        "escaped_defects": 1,
+        "escape_rate_of_defects": 0.012,
+        "escape_rate_ci95": [
+          0.0021,
+          0.0651
+        ],
+        "false_rejects": 3,
+        "false_reject_rate_of_good": 0.0156,
+        "false_reject_ci95": [
+          0.0053,
+          0.0449
+        ]
+      },
+      "test_per_defect": {
+        "blowhole": {
+          "support": 23,
+          "detected_at_0.5": 23,
+          "recall_at_0.5": 1.0,
+          "recall_ci95": [
+            0.8569,
+            1.0
+          ],
+          "not_auto_passed": 23,
+          "caught_or_reviewed_rate": 1.0
+        },
+        "break": {
+          "support": 18,
+          "detected_at_0.5": 18,
+          "recall_at_0.5": 1.0,
+          "recall_ci95": [
+            0.8241,
+            1.0
+          ],
+          "not_auto_passed": 18,
+          "caught_or_reviewed_rate": 1.0
+        },
+        "crack": {
+          "support": 12,
+          "detected_at_0.5": 12,
+          "recall_at_0.5": 1.0,
+          "recall_ci95": [
+            0.7575,
+            1.0
+          ],
+          "not_auto_passed": 12,
+          "caught_or_reviewed_rate": 1.0
+        },
+        "fray": {
+          "support": 5,
+          "detected_at_0.5": 5,
+          "recall_at_0.5": 1.0,
+          "recall_ci95": [
+            0.5655,
+            1.0
+          ],
+          "not_auto_passed": 5,
+          "caught_or_reviewed_rate": 1.0
+        },
+        "uneven": {
+          "support": 17,
+          "detected_at_0.5": 17,
+          "recall_at_0.5": 1.0,
+          "recall_ci95": [
+            0.8157,
+            1.0
+          ],
+          "not_auto_passed": 17,
+          "caught_or_reviewed_rate": 1.0
+        }
+      },
+      "operating_points": [
+        {
+          "validation_tolerance": 0.0,
+          "shipped": false,
+          "val": {
+            "n": 275,
+            "t_low": 0.0343,
+            "t_high": 0.9847,
+            "auto_pass": 16,
+            "auto_defective": 27,
+            "sent_to_review": 232,
+            "review_rate": 0.8436,
+            "auto_decision_accuracy": 1.0,
+            "auto_decision_accuracy_ci95": [
+              0.918,
+              1.0
+            ],
+            "escaped_defects": 0,
+            "escape_rate_of_defects": 0.0,
+            "escape_rate_ci95": [
+              0.0,
+              0.0442
+            ],
+            "false_rejects": 0,
+            "false_reject_rate_of_good": 0.0,
+            "false_reject_ci95": [
+              0.0,
+              0.0196
+            ]
+          },
+          "test": {
+            "n": 277,
+            "t_low": 0.0343,
+            "t_high": 0.9847,
+            "auto_pass": 16,
+            "auto_defective": 35,
+            "sent_to_review": 226,
+            "review_rate": 0.8159,
+            "auto_decision_accuracy": 1.0,
+            "auto_decision_accuracy_ci95": [
+              0.93,
+              1.0
+            ],
+            "escaped_defects": 0,
+            "escape_rate_of_defects": 0.0,
+            "escape_rate_ci95": [
+              0.0,
+              0.0487
+            ],
+            "false_rejects": 0,
+            "false_reject_rate_of_good": 0.0,
+            "false_reject_ci95": [
+              0.0,
+              0.0187
+            ]
+          }
+        },
+        {
+          "validation_tolerance": 0.02,
+          "shipped": true,
+          "val": {
+            "n": 275,
+            "t_low": 0.0394,
+            "t_high": 0.9675,
+            "auto_pass": 80,
+            "auto_defective": 71,
+            "sent_to_review": 124,
+            "review_rate": 0.4509,
+            "auto_decision_accuracy": 0.9735,
+            "auto_decision_accuracy_ci95": [
+              0.9339,
+              0.9897
+            ],
+            "escaped_defects": 1,
+            "escape_rate_of_defects": 0.012,
+            "escape_rate_ci95": [
+              0.0021,
+              0.0651
+            ],
+            "false_rejects": 3,
+            "false_reject_rate_of_good": 0.0156,
+            "false_reject_ci95": [
+              0.0053,
+              0.0449
+            ]
+          },
+          "test": {
+            "n": 277,
+            "t_low": 0.0394,
+            "t_high": 0.9675,
+            "auto_pass": 91,
+            "auto_defective": 68,
+            "sent_to_review": 118,
+            "review_rate": 0.426,
+            "auto_decision_accuracy": 0.9937,
+            "auto_decision_accuracy_ci95": [
+              0.9652,
+              0.9989
+            ],
+            "escaped_defects": 0,
+            "escape_rate_of_defects": 0.0,
+            "escape_rate_ci95": [
+              0.0,
+              0.0487
+            ],
+            "false_rejects": 1,
+            "false_reject_rate_of_good": 0.005,
+            "false_reject_ci95": [
+              0.0009,
+              0.0275
+            ]
+          }
+        },
+        {
+          "validation_tolerance": 0.05,
+          "shipped": false,
+          "val": {
+            "n": 275,
+            "t_low": 0.2545,
+            "t_high": 0.6294,
+            "auto_pass": 191,
+            "auto_defective": 84,
+            "sent_to_review": 0,
+            "review_rate": 0.0,
+            "auto_decision_accuracy": 0.9673,
+            "auto_decision_accuracy_ci95": [
+              0.939,
+              0.9827
+            ],
+            "escaped_defects": 4,
+            "escape_rate_of_defects": 0.0482,
+            "escape_rate_ci95": [
+              0.0189,
+              0.1175
+            ],
+            "false_rejects": 5,
+            "false_reject_rate_of_good": 0.026,
+            "false_reject_ci95": [
+              0.0112,
+              0.0595
+            ]
+          },
+          "test": {
+            "n": 277,
+            "t_low": 0.2545,
+            "t_high": 0.6294,
+            "auto_pass": 200,
+            "auto_defective": 77,
+            "sent_to_review": 0,
+            "review_rate": 0.0,
+            "auto_decision_accuracy": 0.9928,
+            "auto_decision_accuracy_ci95": [
+              0.9741,
+              0.998
+            ],
+            "escaped_defects": 0,
+            "escape_rate_of_defects": 0.0,
+            "escape_rate_ci95": [
+              0.0,
+              0.0487
+            ],
+            "false_rejects": 2,
+            "false_reject_rate_of_good": 0.0099,
+            "false_reject_ci95": [
+              0.0027,
+              0.0354
+            ]
+          }
+        }
+      ]
+    },
+    "notes": [
+      "Validated only on the Magnetic Tile dataset (grayscale ferrite tile surfaces, one imaging setup).",
+      "Test split has 75 defective and 202 good images: far too few to verify a 99.9% target (see the confidence intervals).",
+      "Images are resized to a fixed square input; very small defects (blowholes) lose resolution."
+    ],
+    "created_at": "2026-11-13T15:08:39+00:00",
+    "hardware": "CPU x4 threads (no GPU)"
+  }
+]

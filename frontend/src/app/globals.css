@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html, body { background: #111214; color: #f0efec; }
+body { font-feature-settings: "tnum" 1, "cv11" 1; -webkit-font-smoothing: antialiased; }
+* { scrollbar-width: thin; scrollbar-color: #3a3e45 transparent; }
+:focus-visible { outline: 2px solid #3987e5; outline-offset: 1px; }
+
+@layer components {
+  .card { @apply rounded-md border border-line bg-panel; }
+  .card-h { @apply flex items-center justify-between gap-3 border-b border-line px-4 py-2.5; }
+  .card-t { @apply text-[13px] font-semibold tracking-wide text-ink; }
+  .label { @apply mb-1 block text-[11px] font-medium uppercase tracking-wider text-muted; }
+  .input { @apply w-full rounded border border-line bg-bg px-2.5 py-1.5 text-sm text-ink placeholder:text-muted focus:border-accent focus:outline-none disabled:opacity-50; }
+  .btn { @apply inline-flex items-center justify-center gap-1.5 rounded border border-lineStrong bg-raised px-3 py-1.5 text-sm font-medium text-ink transition-colors hover:bg-[#2a2e33] disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-primary { @apply border-accent bg-accentDim hover:bg-[#256abf]; }
+  .btn-danger { @apply border-[#7a2a2a] bg-[#3a1c1c] hover:bg-[#4a2222]; }
+  .btn-sm { @apply px-2 py-1 text-xs; }
+  .th { @apply whitespace-nowrap border-b border-line px-3 py-2 text-left text-[11px] font-medium uppercase tracking-wider text-muted; }
+  .td { @apply border-b border-line/60 px-3 py-2 text-sm text-ink2; }
+  .chip { @apply inline-flex items-center gap-1 rounded-sm border px-1.5 py-0.5 text-[11px] font-medium leading-4; }
+}
+.recharts-cartesian-axis-tick-value { fill: #8d9096; font-size: 11px; }
+.recharts-legend-item-text { color: #c3c2b7 !important; font-size: 12px; }

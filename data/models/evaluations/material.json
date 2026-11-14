@@ -1,0 +1,87 @@
+[
+  {
+    "id": "material_id-test",
+    "model": "material_id",
+    "version": "1.0.0",
+    "material": "(all)",
+    "dataset": "MT + DeepPCB + CrackForest",
+    "split": "test",
+    "task": "material suggestion",
+    "n": 245,
+    "metrics": {
+      "test": {
+        "n": 245,
+        "accuracy": 1.0,
+        "accuracy_ci95": [
+          0.9846,
+          1.0
+        ],
+        "macro_f1": 1.0,
+        "per_class": {
+          "magnetic_tile": {
+            "support": 85,
+            "precision": 1.0,
+            "recall": 1.0,
+            "recall_ci95": [
+              0.9568,
+              1.0
+            ],
+            "f1": 1.0
+          },
+          "pcb_bare_board": {
+            "support": 130,
+            "precision": 1.0,
+            "recall": 1.0,
+            "recall_ci95": [
+              0.9713,
+              1.0
+            ],
+            "f1": 1.0
+          },
+          "pavement_crack": {
+            "support": 30,
+            "precision": 1.0,
+            "recall": 1.0,
+            "recall_ci95": [
+              0.8865,
+              1.0
+            ],
+            "f1": 1.0
+          }
+        },
+        "confusion": {
+          "labels": [
+            "magnetic_tile",
+            "pcb_bare_board",
+            "pavement_crack"
+          ],
+          "matrix": [
+            [
+              85,
+              0,
+              0
+            ],
+            [
+              0,
+              130,
+              0
+            ],
+            [
+              0,
+              0,
+              30
+            ]
+          ]
+        }
+      },
+      "test_rejected_as_unknown_rate": 0.0776
+    },
+    "notes": [
+      "Knows only the three materials/imaging setups it has prototypes for; these datasets are visually trivial to tell apart, so this accuracy says nothing about distinguishing e.g. steel from aluminium.",
+      "Anything farther from a prototype than 90% of that profile's own training images is reported as 'unknown' and the operator is asked to choose (so roughly 1 in 10 genuine images is also asked). Rejection of truly foreign materials was not benchmarked.",
+      "It is a suggestion only: the operator's selection always overrides it."
+    ],
+    "created_at": "2026-11-13T15:08:48+00:00",
+    "hardware": "CPU x4 threads (no GPU)"
+  }
+]

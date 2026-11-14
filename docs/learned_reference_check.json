@@ -1,0 +1,60 @@
+{
+ "setup": "12 defect-free Magnetic Tile TEST images as reference frames (resized 400x300); remaining test images as frames",
+ "results": {
+  "low": {
+   "n": 265,
+   "tp": 37,
+   "fp": 22,
+   "fn": 38,
+   "tn": 168,
+   "precision": 0.6271,
+   "recall": 0.4933,
+   "recall_ci95": [
+    0.3833,
+    0.604
+   ],
+   "false_positive_rate": 0.1158,
+   "fpr_ci95": [
+    0.0777,
+    0.1691
+   ]
+  },
+  "normal": {
+   "n": 265,
+   "tp": 60,
+   "fp": 63,
+   "fn": 15,
+   "tn": 127,
+   "precision": 0.4878,
+   "recall": 0.8,
+   "recall_ci95": [
+    0.6959,
+    0.8749
+   ],
+   "false_positive_rate": 0.3316,
+   "fpr_ci95": [
+    0.2686,
+    0.4013
+   ]
+  },
+  "high": {
+   "n": 265,
+   "tp": 67,
+   "fp": 96,
+   "fn": 8,
+   "tn": 94,
+   "precision": 0.411,
+   "recall": 0.8933,
+   "recall_ci95": [
+    0.8034,
+    0.945
+   ],
+   "false_positive_rate": 0.5053,
+   "fpr_ci95": [
+    0.4348,
+    0.5755
+   ]
+  },
+  "auroc": 0.8
+ }
+}

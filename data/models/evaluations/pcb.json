@@ -1,0 +1,236 @@
+[
+  {
+    "id": "pcb_refdiff-test",
+    "model": "pcb_refdiff",
+    "version": "1.0.0",
+    "material": "electronics",
+    "dataset": "DeepPCB",
+    "split": "test",
+    "task": "defect detection + classification (reference comparison)",
+    "n": 500,
+    "metrics": {
+      "images": 500,
+      "gt_defects": 3140,
+      "predicted_defects": 3006,
+      "localization": {
+        "iou_threshold": 0.33,
+        "precision": 0.9764,
+        "recall": 0.9347,
+        "recall_ci95": [
+          0.9255,
+          0.9428
+        ],
+        "f1": 0.9551,
+        "false_negative_rate": 0.0653,
+        "false_alarms_per_image": 0.142
+      },
+      "class_aware": {
+        "precision": 0.9727,
+        "recall": 0.9312,
+        "recall_ci95": [
+          0.9218,
+          0.9395
+        ],
+        "f1": 0.9515
+      },
+      "per_defect": {
+        "open": {
+          "support": 659,
+          "recall": 0.912,
+          "recall_ci95": [
+            0.8879,
+            0.9313
+          ],
+          "precision": 0.9709
+        },
+        "short": {
+          "support": 478,
+          "recall": 0.8682,
+          "recall_ci95": [
+            0.8349,
+            0.8956
+          ],
+          "precision": 0.9432
+        },
+        "mousebite": {
+          "support": 586,
+          "recall": 0.9232,
+          "recall_ci95": [
+            0.8988,
+            0.9421
+          ],
+          "precision": 0.9783
+        },
+        "spur": {
+          "support": 483,
+          "recall": 0.9255,
+          "recall_ci95": [
+            0.8985,
+            0.9457
+          ],
+          "precision": 0.9739
+        },
+        "copper": {
+          "support": 464,
+          "recall": 0.9914,
+          "recall_ci95": [
+            0.978,
+            0.9966
+          ],
+          "precision": 0.9766
+        },
+        "pin-hole": {
+          "support": 470,
+          "recall": 0.9787,
+          "recall_ci95": [
+            0.9613,
+            0.9884
+          ],
+          "precision": 0.9914
+        }
+      },
+      "classification_of_matched": {
+        "n": 2935,
+        "accuracy": 0.9963,
+        "accuracy_ci95": [
+          0.9933,
+          0.9979
+        ],
+        "macro_f1": 0.9961,
+        "per_class": {
+          "open": {
+            "support": 601,
+            "precision": 0.9983,
+            "recall": 1.0,
+            "recall_ci95": [
+              0.9936,
+              1.0
+            ],
+            "f1": 0.9992
+          },
+          "short": {
+            "support": 416,
+            "precision": 0.9905,
+            "recall": 0.9976,
+            "recall_ci95": [
+              0.9865,
+              0.9996
+            ],
+            "f1": 0.994
+          },
+          "mousebite": {
+            "support": 544,
+            "precision": 0.9963,
+            "recall": 0.9945,
+            "recall_ci95": [
+              0.9839,
+              0.9981
+            ],
+            "f1": 0.9954
+          },
+          "spur": {
+            "support": 450,
+            "precision": 0.9978,
+            "recall": 0.9933,
+            "recall_ci95": [
+              0.9806,
+              0.9977
+            ],
+            "f1": 0.9955
+          },
+          "copper": {
+            "support": 462,
+            "precision": 0.9957,
+            "recall": 0.9957,
+            "recall_ci95": [
+              0.9844,
+              0.9988
+            ],
+            "f1": 0.9957
+          },
+          "pin-hole": {
+            "support": 462,
+            "precision": 0.9978,
+            "recall": 0.9957,
+            "recall_ci95": [
+              0.9844,
+              0.9988
+            ],
+            "f1": 0.9967
+          }
+        },
+        "confusion": {
+          "labels": [
+            "open",
+            "short",
+            "mousebite",
+            "spur",
+            "copper",
+            "pin-hole"
+          ],
+          "matrix": [
+            [
+              601,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              415,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              541,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              2,
+              0,
+              447,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              1,
+              460,
+              0
+            ],
+            [
+              0,
+              0,
+              2,
+              0,
+              0,
+              460
+            ]
+          ]
+        }
+      },
+      "latency_ms_mean": 32.9,
+      "latency_ms_p95": 91.2
+    },
+    "notes": [
+      "Requires an aligned defect-free template of the same board region (golden-reference inspection).",
+      "DeepPCB images are binarized line-scan crops at ~48 px/mm; photographs of populated boards are out of distribution.",
+      "DeepPCB contains no defect-free test images, so image-level false-positive rate and AUROC cannot be measured; only defect-level precision/recall are validated. Automatic PASS is therefore disabled for this profile by default.",
+      "Most DeepPCB defects were synthetically added by the dataset authors following real defect patterns.",
+      "The official trainval/test split shares board groups between splits (we keep it for comparability)."
+    ],
+    "created_at": "2026-11-13T13:48:01+00:00",
+    "hardware": "CPU x4 threads (no GPU)"
+  }
+]

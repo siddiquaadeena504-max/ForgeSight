@@ -1,0 +1,257 @@
+{
+  "name": "mt_patchcore",
+  "version": "1.0.0",
+  "kind": "anomaly",
+  "material": "ceramics",
+  "architecture": "PatchCore: frozen ImageNet MobileNetV2 (blocks 6+13), 3x3 avg-pooled patch features, greedy k-center coreset (4000), 1-NN distance",
+  "dataset": "Magnetic Tile Surface Defects",
+  "splits": {
+    "test": {
+      "good": 202,
+      "blowhole": 23,
+      "break": 18,
+      "crack": 12,
+      "fray": 5,
+      "uneven": 17
+    },
+    "val": {
+      "good": 192,
+      "blowhole": 22,
+      "break": 22,
+      "crack": 11,
+      "fray": 7,
+      "uneven": 21
+    },
+    "train": {
+      "good": 558,
+      "blowhole": 70,
+      "break": 45,
+      "crack": 34,
+      "fray": 20,
+      "uneven": 65
+    }
+  },
+  "trained_on": "train split, defect-free images only",
+  "calibration": {
+    "type": "platt",
+    "a": 1.383745160308503,
+    "b": -22.316959551730744
+  },
+  "pixel_threshold": 15.49195615768432,
+  "metrics": {
+    "val": {
+      "auroc": 0.9298,
+      "n": 275,
+      "tp": 67,
+      "fp": 24,
+      "fn": 16,
+      "tn": 168,
+      "accuracy": 0.8545,
+      "accuracy_ci95": [
+        0.808,
+        0.8913
+      ],
+      "precision": 0.7363,
+      "recall": 0.8072,
+      "recall_ci95": [
+        0.7096,
+        0.8777
+      ],
+      "f1": 0.7701,
+      "false_positive_rate": 0.125,
+      "fpr_ci95": [
+        0.0855,
+        0.1793
+      ],
+      "false_negative_rate": 0.1928,
+      "fnr_ci95": [
+        0.1223,
+        0.2904
+      ],
+      "calibration": {
+        "ece": 0.0887,
+        "bins": [
+          {
+            "bin": "0.0-0.1",
+            "n": 75,
+            "mean_predicted": 0.0641,
+            "observed_rate": 0.0133
+          },
+          {
+            "bin": "0.1-0.2",
+            "n": 65,
+            "mean_predicted": 0.1486,
+            "observed_rate": 0.0308
+          },
+          {
+            "bin": "0.2-0.3",
+            "n": 15,
+            "mean_predicted": 0.2414,
+            "observed_rate": 0.1333
+          },
+          {
+            "bin": "0.3-0.4",
+            "n": 13,
+            "mean_predicted": 0.3514,
+            "observed_rate": 0.3846
+          },
+          {
+            "bin": "0.4-0.5",
+            "n": 16,
+            "mean_predicted": 0.4493,
+            "observed_rate": 0.375
+          },
+          {
+            "bin": "0.5-0.6",
+            "n": 18,
+            "mean_predicted": 0.5374,
+            "observed_rate": 0.3889
+          },
+          {
+            "bin": "0.6-0.7",
+            "n": 5,
+            "mean_predicted": 0.649,
+            "observed_rate": 0.6
+          },
+          {
+            "bin": "0.7-0.8",
+            "n": 6,
+            "mean_predicted": 0.7411,
+            "observed_rate": 0.5
+          },
+          {
+            "bin": "0.8-0.9",
+            "n": 12,
+            "mean_predicted": 0.8558,
+            "observed_rate": 0.6667
+          },
+          {
+            "bin": "0.9-1.0",
+            "n": 50,
+            "mean_predicted": 0.9807,
+            "observed_rate": 0.92
+          }
+        ]
+      }
+    },
+    "test": {
+      "auroc": 0.9659,
+      "n": 277,
+      "tp": 66,
+      "fp": 22,
+      "fn": 9,
+      "tn": 180,
+      "accuracy": 0.8881,
+      "accuracy_ci95": [
+        0.8455,
+        0.92
+      ],
+      "precision": 0.75,
+      "recall": 0.88,
+      "recall_ci95": [
+        0.7874,
+        0.9356
+      ],
+      "f1": 0.8098,
+      "false_positive_rate": 0.1089,
+      "fpr_ci95": [
+        0.073,
+        0.1594
+      ],
+      "false_negative_rate": 0.12,
+      "fnr_ci95": [
+        0.0644,
+        0.2126
+      ],
+      "calibration": {
+        "ece": 0.1212,
+        "bins": [
+          {
+            "bin": "0.0-0.1",
+            "n": 83,
+            "mean_predicted": 0.0629,
+            "observed_rate": 0.0
+          },
+          {
+            "bin": "0.1-0.2",
+            "n": 47,
+            "mean_predicted": 0.1426,
+            "observed_rate": 0.0
+          },
+          {
+            "bin": "0.2-0.3",
+            "n": 25,
+            "mean_predicted": 0.2348,
+            "observed_rate": 0.12
+          },
+          {
+            "bin": "0.3-0.4",
+            "n": 17,
+            "mean_predicted": 0.3395,
+            "observed_rate": 0.1176
+          },
+          {
+            "bin": "0.4-0.5",
+            "n": 17,
+            "mean_predicted": 0.4565,
+            "observed_rate": 0.2353
+          },
+          {
+            "bin": "0.5-0.6",
+            "n": 10,
+            "mean_predicted": 0.5493,
+            "observed_rate": 0.3
+          },
+          {
+            "bin": "0.6-0.7",
+            "n": 5,
+            "mean_predicted": 0.6345,
+            "observed_rate": 0.4
+          },
+          {
+            "bin": "0.7-0.8",
+            "n": 9,
+            "mean_predicted": 0.7456,
+            "observed_rate": 0.2222
+          },
+          {
+            "bin": "0.8-0.9",
+            "n": 11,
+            "mean_predicted": 0.8715,
+            "observed_rate": 0.8182
+          },
+          {
+            "bin": "0.9-1.0",
+            "n": 53,
+            "mean_predicted": 0.9865,
+            "observed_rate": 0.9434
+          }
+        ]
+      }
+    },
+    "test_pixel": {
+      "pixel_precision": 0.3145,
+      "pixel_recall": 0.3612,
+      "pixel_f1": 0.3362,
+      "iou": 0.2021
+    },
+    "cross_validation": {
+      "folds": 5,
+      "auroc_per_fold": [
+        0.9664,
+        0.9615,
+        0.9761,
+        0.9135,
+        0.9095
+      ],
+      "auroc_mean": 0.9454,
+      "auroc_std": 0.0281
+    }
+  },
+  "limitations": [
+    "Validated only on the Magnetic Tile dataset (grayscale ferrite tile surfaces, one imaging setup).",
+    "Test split has 75 defective and 202 good images: far too few to verify a 99.9% target (see the confidence intervals).",
+    "Images are resized to a fixed square input; very small defects (blowholes) lose resolution."
+  ],
+  "created_at": "2026-11-13T15:08:39+00:00"
+}

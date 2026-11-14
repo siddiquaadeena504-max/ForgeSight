@@ -1,0 +1,22 @@
+{
+  "key": "pavement_crack",
+  "material": "construction",
+  "name": "Pavement / concrete surface cracks",
+  "product_category": "Asphalt or concrete surface",
+  "requires_reference": false,
+  "mm_per_pixel": null,
+  "detectors": [
+    {
+      "type": "segnet",
+      "model": "concrete_crack_segnet",
+      "version": "1.0.0"
+    }
+  ],
+  "decision": {
+    "mode": "regions",
+    "region_confident": 0.8,
+    "image_level_validated": false,
+    "validated": true,
+    "evidence": "concrete_crack_segnet-cfd-test"
+  }
+}
